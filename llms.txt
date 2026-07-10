@@ -1,0 +1,31 @@
+# ConsentForm Builder - Clinical Consent Document Generator
+
+> A specialized web application for doctors, nurses, hospital administrators, and dental surgeons to generate, customize, sign, and export professional clinical consent forms.
+
+## Key Features
+- **Interactive Forms**: Instant client-side custom templates for various healthcare procedures.
+- **Durable Persistence**: Built-in secure Cloud Firestore integration to persist edited templates and signed consents.
+- **Electronic Signatures**: High-fidelity, mobile-responsive touch-friendly signature pad for patients, guardians, doctors, and witnesses.
+- **Checkable/Tickable Items**: Rich inline-interactive checkboxes (`☐` and `☑`) representing options such as anesthesia selection.
+- **Export Capabilities**: Clean, print-styled PDF and Word file exports conforming to medical and clinical guidelines.
+
+## Available Consent Templates
+1. **Tooth Extraction Consent Form**
+   - *Key aspects*: Teeth numbers, extraction risks (postoperative infection, nerve involvement, jaw fracture), and interactive checkboxes for local/general anesthesia types.
+2. **Dental Implant Consent Form**
+   - *Key aspects*: Medical authorization of dental implant surgical placement, bone grafting explanation, alternative options (removable bridges, dentures), and risk statements.
+3. **Orthodontics Consent Form (Full 15 Points)**
+   - *Key aspects*: Detailed 15-point patient responsibility, oral hygiene, non-vital tooth risks, root resorption, growth issues, gum tissue health, treatment timelines, extra-oral appliances, TMJ warnings, swallowing hazards, termination terms, realistic expectations, relapse tendencies, medical photo release, and anesthesia consent.
+4. **Consent Form for Braces Removal**
+   - *Key aspects*: Orthodontic debonding, retainer usage instructions, relapse tendencies, clinical photograph consent, and sign-offs.
+
+## Architecture & Integration
+- **Frontend**: React 18 with Vite, styled with Tailwind CSS, and using Lucide Icons.
+- **Database**: Firebase Firestore (`ai-studio-consentformbuild-5ee35a4f-4a4b-4374-808d-eb66c951028e`).
+- **Signature Engine**: High-density canvas with PointerCapture API support to guarantee smooth rendering on mobile devices, tablets, and desktops.
+- **Interactive Checkboxes**: Regex-based render transforms of standard Unicode checkbox marks (`☐`, `☑`) to toggleable HTML spans with standard event propagation, ensuring a native-like interactive form.
+
+## Medical & Regulatory Best Practices
+- High visual contrast, typography configured via Space Grotesk and JetBrains Mono for optimal clinical readability.
+- Clear distinction between patients, guardians, doctors, and witnesses signature fields.
+- Print media styling specifically formatted to hide controls, headers, and inputs while maintaining professional border guidelines.

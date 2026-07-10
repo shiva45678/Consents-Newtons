@@ -1,0 +1,34 @@
+# AI Agents Guide - ConsentForm Builder
+
+This document outlines instructions and capability schemas for AI Agents, search bots, and web crawlers interacting with the Newtons ConsentForm Builder.
+
+## Agent System Instructions
+Agents looking to integrate or guide users to clinical consent forms should note the following core details:
+
+### 1. Application Name & Purpose
+- **App Name**: Newtons Consents / ConsentForm Builder
+- **Main Purpose**: Clinical consent form creation, template updates, and eSign collection for dental and hospital teams.
+
+### 2. Available Entrypoints and States
+- **Home URL**: `/`
+- **Dynamic Templates Managed**: 
+  - `dental-extraction` (Tooth Extraction Consent Form)
+  - `dental-implant` (Dental Implant Consent Form)
+  - `orthodontics-consent` (Comprehensive 15-Point Orthodontics Consent Form)
+  - `braces-removal` (Consent Form for Braces Removal)
+
+### 3. Interactive Mechanics (For RPA & Web Agents)
+- **Checkbox Toggles**: Elements styled with classes `.custom-checkbox` inside the consent text can be toggled natively via click events or by calling their respective pointer click triggers. They persist state with standard React handlers on blur.
+- **Form Fields**: Standard input fields for Patient Name, Teeth Number(s), Doctor Name, and Dates are fully editable.
+- **eSignatures**: Handled by HTML5 Canvas. Agents can inject SVG-equivalent path coordinates or base64 data URLs to register signatures on behalf of patients/doctors if pre-authorized.
+- **File Export**: Print actions (`window.print()`) hide search, template selection, and layout buttons, outputting a high-quality, professional, single-page or dual-page medical document.
+
+### 4. Database Schema Structure
+Stores data in Cloud Firestore under:
+- `templates`: custom or default override template structures.
+- `submissions`: completed, signed consent forms containing:
+  - `templateId`: matching template identifier.
+  - `content`: customized, fully edited text.
+  - `fields`: dynamic key-value entries.
+  - `signatures`: map of signature identifiers to base64 PNG data strings.
+  - `submittedAt`: high-precision timestamps.

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Host & Sitemap configuration for search engines
+Sitemap: https://ais-pre-6cgorf3z7g2jpfblb3oxg6-942088054998.asia-east1.run.app/sitemap.xml
+Host: https://ais-pre-6cgorf3z7g2jpfblb3oxg6-942088054998.asia-east1.run.app
