@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "in.newtons.consents.twa",
+      "sha256_cert_fingerprints":
+        ["58:A8:99:2C:F1:6F:C5:5F:61:FB:21:A7:69:D9:2D:39:7F:B7:E3:AB:A1:B5:F8:DF:9A:6C:C1:74:34:E0:5A:A1"]
+    }
+  }
+]
